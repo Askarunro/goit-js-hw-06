@@ -5,7 +5,7 @@ const makeItemIngredient = ingredients => {
   return ingredients.map(ingredient => {
     const ingredientEl = document.createElement('li');
     ingredientEl.textContent = ingredient;
-    console.log(ingredientEl);
+
     ingredientEl.classList.add('item');
     return ingredientEl;
   });
