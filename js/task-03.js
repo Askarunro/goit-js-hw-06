@@ -14,20 +14,21 @@ const images = [
 ];
 
 const makeImgInItem = ({ url, alt }) => {
-  const imgEl = document.createElement('img');
-  const itemEl = document.createElement('li');
-  imgEl.src = url;
-  imgEl.alt = alt;
-  console.log(imgEl);
-  console.log(itemEl.insertAdjacentHTML('afterBegin', `${imgEl}`));
-  return ;
+  return `<li><img src="${url}" alt="${alt}"></li>`;
 };
-
 const listEl = document.querySelector('.gallery');
-const elements = images.map(makeImgInItem);
-console.log(elements);
-// itemEl.append(...elements);
-// console.log(itemEl);
-listEl.append(...elements);
-console.log(listEl);
-// console.log(listEl.append(itemEl.append(...elements)));
+const elements = images.map(makeImgInItem).join('');
+
+listEl.insertAdjacentHTML('beforeend', elements);
+
+const itemEl = listEl.querySelectorAll('li');
+
+itemEl.forEach(element => {
+  element.classList.add('item');
+});
+
+const styleImg = document.querySelectorAll('img');
+
+styleImg.forEach(elementImg => {
+  elementImg.classList.add('gallery__img');
+});
