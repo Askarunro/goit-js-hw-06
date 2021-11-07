@@ -1,4 +1,3 @@
-const ulEl = document.querySelector('#categories');
 const totalUlEl = document.querySelectorAll('.item');
 console.log(`Number of categories: ${totalUlEl.length}`);
 
