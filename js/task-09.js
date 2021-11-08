@@ -6,6 +6,7 @@ button.addEventListener('click', even => {
   function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   }
-  body.style.backgroundColor = getRandomHexColor();
-  text.textContent = getRandomHexColor();
+  const a = getRandomHexColor();
+  body.style.backgroundColor = a;
+  text.textContent = a;
 });
